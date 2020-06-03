@@ -102,15 +102,15 @@ $(document).ready(function() {
 									if(on) {
 										// Darken screen and show hint
 										$.blockUI({ 
-											message: '<div><img src="up_arrow.png"/></div>',
+											message: '<h5>Please allow microphone on your browser</h5>',
 											css: {
+												color: '#29291e',
+												float: 'none',
+												margin: '0 auto',
 												border: 'none',
-												padding: '15px',
-												backgroundColor: 'transparent',
-												color: '#aaa',
-												top: '10px',
-												left: (navigator.mozGetUserMedia ? '-100px' : '300px')
-											} });
+												padding: '20px'
+											} 
+										});
 									} else {
 										// Restore screen
 										$.unblockUI();

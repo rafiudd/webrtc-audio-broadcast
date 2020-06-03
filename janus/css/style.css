@@ -7,6 +7,11 @@ body {
     text-align: center;
 }
 
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
 .box {
     width: 50vw;
     background: white;
@@ -54,6 +59,11 @@ h1 {
     font-weight: bold;
     color: white;
 }
+
+h5 {
+    font-weight: bold;
+}
+
 
 /* margin and etc */
 .top-10 {
