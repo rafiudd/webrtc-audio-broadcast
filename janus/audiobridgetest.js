@@ -287,16 +287,20 @@ $(document).ready(function() {
 										return;
 									// Mute button
 									audioenabled = true;
-									$('#toggleaudio').click(
-										function() {
-											audioenabled = !audioenabled;
-											if(audioenabled)
-												$('#toggleaudio').html("Mute").removeClass("btn-success").addClass("btn-danger");
-											else
-												$('#toggleaudio').html("Unmute").removeClass("btn-danger").addClass("btn-success");
-											mixertest.send({message: { "request": "configure", "muted": !audioenabled }});
-										}).removeClass('hide').show();
-
+									if(myusername != adminusername) {
+										console.log("this is not admin cannot stream")
+										audioenabled = !audioenabled;
+										mixertest.send({message: { "request": "configure", "muted": !audioenabled }});
+									}
+									// $('#toggleaudio').click(
+									// 	function() {
+									// 		audioenabled = !audioenabled;
+									// 		if(audioenabled)
+									// 			$('#toggleaudio').html("Mute").removeClass("btn-success").addClass("btn-danger");
+									// 		else
+									// 			$('#toggleaudio').html("Unmute").removeClass("btn-danger").addClass("btn-success");
+									// 		mixertest.send({message: { "request": "configure", "muted": !audioenabled }});
+									// 	}).removeClass('hide').show();
 								},
 								oncleanup: function() {
 									webrtcUp = false;
